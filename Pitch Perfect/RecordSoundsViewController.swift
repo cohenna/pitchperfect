@@ -24,7 +24,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         super.viewWillAppear(animated)
         recordingButton.enabled = true
         stopButton.hidden = true
-        recordingInProgress.hidden = true
+        recordingInProgress.text = "Tap to Record"
     }
     
     override func viewDidLoad() {
@@ -45,7 +45,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             self.recordingInProgress!.hidden = true
         }*/
         
-        recordingInProgress.hidden = false
+        recordingInProgress.text = "Recording in Progress..."
         recordingButton.enabled = false
         stopButton.hidden = false
         

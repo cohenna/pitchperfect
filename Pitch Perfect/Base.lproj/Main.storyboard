@@ -27,12 +27,6 @@
                                     <action selector="recordAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OXm-ij-eFR"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4Q-qG-7M0">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wk6-Kz-qs2">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="stop">
@@ -42,21 +36,27 @@
                                     <action selector="stopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0jb-aB-eeA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4Q-qG-7M0">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="X4Q-qG-7M0" secondAttribute="centerX" constant="-0.5" id="Ki7-vi-cWV"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Wk6-Kz-qs2" secondAttribute="bottom" constant="100" id="Ljc-iO-Ill"/>
                             <constraint firstAttribute="centerX" secondItem="Wk6-Kz-qs2" secondAttribute="centerX" id="Qqw-Uf-UvR"/>
-                            <constraint firstItem="X4Q-qG-7M0" firstAttribute="top" secondItem="OeY-Op-qhD" secondAttribute="bottom" constant="43" id="ZZT-gI-WQW"/>
+                            <constraint firstItem="X4Q-qG-7M0" firstAttribute="top" secondItem="OeY-Op-qhD" secondAttribute="bottom" constant="15" id="ZZT-gI-WQW"/>
                             <constraint firstAttribute="centerY" secondItem="OeY-Op-qhD" secondAttribute="centerY" id="vfG-TE-eo5"/>
                             <constraint firstAttribute="centerX" secondItem="OeY-Op-qhD" secondAttribute="centerX" id="xn1-3O-lme"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="OeY-Op-qhD"/>
-                                <exclude reference="X4Q-qG-7M0"/>
                                 <exclude reference="Wk6-Kz-qs2"/>
+                                <exclude reference="X4Q-qG-7M0"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="vfG-TE-eo5"/>
@@ -70,8 +70,8 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="OeY-Op-qhD"/>
-                                <include reference="X4Q-qG-7M0"/>
                                 <include reference="Wk6-Kz-qs2"/>
+                                <include reference="X4Q-qG-7M0"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="vfG-TE-eo5"/>
