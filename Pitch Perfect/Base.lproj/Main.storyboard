@@ -46,7 +46,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="X4Q-qG-7M0" secondAttribute="centerX" constant="-0.5" id="Ki7-vi-cWV"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Wk6-Kz-qs2" secondAttribute="bottom" constant="100" id="Ljc-iO-Ill"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Wk6-Kz-qs2" secondAttribute="bottom" constant="25" id="Ljc-iO-Ill"/>
                             <constraint firstAttribute="centerX" secondItem="Wk6-Kz-qs2" secondAttribute="centerX" id="Qqw-Uf-UvR"/>
                             <constraint firstItem="X4Q-qG-7M0" firstAttribute="top" secondItem="OeY-Op-qhD" secondAttribute="bottom" constant="15" id="ZZT-gI-WQW"/>
                             <constraint firstAttribute="centerY" secondItem="OeY-Op-qhD" secondAttribute="centerY" id="vfG-TE-eo5"/>
@@ -173,7 +173,7 @@
                             <constraint firstItem="vTH-LR-8Dg" firstAttribute="leading" secondItem="7nY-Jo-UkZ" secondAttribute="leadingMargin" constant="25" id="Glx-TG-lVh"/>
                             <constraint firstItem="ljA-LX-rZG" firstAttribute="top" secondItem="c6N-5r-Vhu" secondAttribute="bottom" constant="36" id="Hgd-bi-lcC"/>
                             <constraint firstItem="8Zb-AX-GEa" firstAttribute="leading" secondItem="7nY-Jo-UkZ" secondAttribute="leadingMargin" constant="25" id="Hxn-zk-BFV"/>
-                            <constraint firstItem="k1X-FY-UqX" firstAttribute="top" secondItem="4EM-4W-TNz" secondAttribute="bottom" constant="100" id="TRa-Bb-gJD"/>
+                            <constraint firstItem="k1X-FY-UqX" firstAttribute="top" secondItem="4EM-4W-TNz" secondAttribute="bottom" constant="25" id="TRa-Bb-gJD"/>
                             <constraint firstItem="vTH-LR-8Dg" firstAttribute="top" secondItem="c6N-5r-Vhu" secondAttribute="bottom" constant="36" id="bJL-Zc-iiT"/>
                             <constraint firstItem="8Zb-AX-GEa" firstAttribute="top" secondItem="vTH-LR-8Dg" secondAttribute="bottom" constant="101" id="mtD-T8-Roj"/>
                             <constraint firstItem="7mC-Fo-ytn" firstAttribute="top" secondItem="ljA-LX-rZG" secondAttribute="bottom" constant="101" id="oN6-tv-BGx"/>
