@@ -20,6 +20,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var recordingInProgress: UILabel!
     
+    @IBOutlet weak var pauseButton: UIButton!
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         cleanupForRecording()
@@ -28,6 +30,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     func cleanupForRecording() {
         recordingButton.enabled = true
         stopButton.hidden = true
+        pauseButton.hidden = true
         recordingInProgress.text = "Tap to Record"
     }
     
@@ -43,24 +46,33 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         recordingInProgress.text = "Recording in Progress..."
         recordingButton.enabled = false
         stopButton.hidden = false
+        pauseButton.hidden = false
+        pauseButton.enabled = true
         
-        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-        let currentDateTime = NSDate()
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "ddMMyyyy-HHmmss"
-        let recordingName = formatter.stringFromDate(currentDateTime)+".wav"
-        let pathArray = [dirPath, recordingName]
-        let filePath = NSURL.fileURLWithPathComponents(pathArray)
-        println(filePath)
         
-        var session = AVAudioSession.sharedInstance()
-        session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
-        
-        audioRecorder = AVAudioRecorder(URL: filePath, settings: nil, error: nil)
-        audioRecorder.delegate = self
-        audioRecorder.meteringEnabled = true
-        audioRecorder.prepareToRecord()
-        audioRecorder.record()
+        if (audioRecorder != nil) {
+            // resume audio recording
+            audioRecorder.record()
+        } else {
+            // not resuming, starting recording from the beginning (i.e. no pause)
+            let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+            let currentDateTime = NSDate()
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "ddMMyyyy-HHmmss"
+            let recordingName = formatter.stringFromDate(currentDateTime)+".wav"
+            let pathArray = [dirPath, recordingName]
+            let filePath = NSURL.fileURLWithPathComponents(pathArray)
+            println(filePath)
+            
+            var session = AVAudioSession.sharedInstance()
+            session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
+            
+            audioRecorder = AVAudioRecorder(URL: filePath, settings: nil, error: nil)
+            audioRecorder.delegate = self
+            audioRecorder.meteringEnabled = true
+            audioRecorder.prepareToRecord()
+            audioRecorder.record()
+        }
         
     }
 
@@ -69,6 +81,13 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         var audioSession = AVAudioSession.sharedInstance()
         audioSession.setActive(false, error: nil)
         
+    }
+    
+    @IBAction func pauseRecording(sender: UIButton) {
+        pauseButton.enabled = false
+        recordingButton.enabled = true
+        recordingInProgress.text = "Recording Paused..."
+        audioRecorder.pause()
     }
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
